@@ -227,3 +227,24 @@ string generateWordToGuess(){
 
     return wordToGuess;
 };
+int getTotalChars(string wordToGuess){
+    int totalChars = 0;
+    for(int i = 0; wordToGuess[i] != '\0'; i++){
+        totalChars++;
+    }
+    return totalChars;
+}
+
+string* getGuessedWord(int totalChars){
+    string* guessedWord = new string[totalChars];
+    for(int i = 0; i < totalChars; i++){
+        guessedWord[i] = '_';
+    }
+    return guessedWord;
+}
+
+void printGuessedWord(int totalChars, string* guessedWord){
+    for(int i = 0; i < totalChars; i++){
+        cout << guessedWord[i];
+    }
+}
