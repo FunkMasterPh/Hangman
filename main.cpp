@@ -8,10 +8,10 @@ int totalChars;
 char userCharGuess;
 int totalGuesses = 8;
 bool correctGuess;
-string mysteryWord;
 
 int main(){
     string wordToGuess = generateWordToGuess();
+    string mysteryWord = wordToGuess;
     totalChars = getTotalChars(wordToGuess);
     for(int i = 0; i < totalChars; i++){
         mysteryWord[i] = '_';
@@ -34,14 +34,13 @@ int main(){
             totalGuesses--;
         }
         if(totalGuesses <= 0){
-            cout << "No guesses remaining... Game Over." << endl;
+            cout << "No guesses remaining... The word was " << wordToGuess << endl;
             break;
         }
         if(wordToGuess.compare(mysteryWord) == 0){
+            cout << mysteryWord << endl;
             cout << "Congratulations, you guessed the word correctly!" << endl;
             break;
-        }else{
-            cout << "nope" << endl;
         }
     }
     return 0;

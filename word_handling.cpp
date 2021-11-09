@@ -236,7 +236,7 @@ int getTotalChars(string wordToGuess){
 }
 
 void printMysteryWord(int totalChars, string mysteryWord){
-    for(int i = 0; i < totalChars; i++){
+    for(int i = 0; i < sizeof(mysteryWord); i++){
         cout << mysteryWord[i];
     }
 }
