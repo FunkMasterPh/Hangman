@@ -21,7 +21,6 @@ int main(){
         correctGuess = false;
         cout << "Guesses remaining: " << totalGuesses << endl << endl;
         printMysteryWord(totalChars, mysteryWord);
-        printMysteryWord(totalChars, wordToGuess);
         cout << endl;
         cout << "Your guess: ";
         cin >> userCharGuess;
@@ -34,10 +33,10 @@ int main(){
         if(correctGuess == false){
             totalGuesses--;
         }
-        //if(totalGuesses <= 0){
-        //    cout << "No guesses remaining... Game Over." << endl;
-        //    break;
-        //}
+        if(totalGuesses <= 0){
+            cout << "No guesses remaining... Game Over." << endl;
+            break;
+        }
         if(wordToGuess.compare(mysteryWord) == 0){
             cout << "Congratulations, you guessed the word correctly!" << endl;
             break;
